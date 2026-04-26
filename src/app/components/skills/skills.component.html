@@ -1,0 +1,35 @@
+<section id="skills" class="skills">
+  <h2 class="section-title">Skills & Expertise</h2>
+
+  <div class="skills-container">
+    <div class="category-filter">
+      <button *ngFor="let category of categories"
+              [class.active]="selectedCategory === category"
+              (click)="selectCategory(category)"
+              class="category-btn">
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="skills-grid">
+      <div *ngFor="let skill of filteredSkills; let i = index"
+           class="skill-card glass-card"
+           [style.animation-delay]="(i * 0.05) + 's'">
+        
+        <div class="skill-header">
+          <span class="skill-icon">{{ skill.icon }}</span>
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+
+        <div class="skill-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="skill.level"></div>
+          </div>
+          <span class="progress-text">{{ skill.level }}%</span>
+        </div>
+
+        <span class="skill-category">{{ skill.category }}</span>
+      </div>
+    </div>
+  </div>
+</section>

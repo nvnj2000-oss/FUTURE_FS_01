@@ -1,0 +1,47 @@
+<section id="projects" class="projects">
+  <h2 class="section-title">Featured Projects</h2>
+
+  <div class="projects-container">
+    <div class="category-filter">
+      <button *ngFor="let category of categories"
+              [class.active]="selectedCategory === category"
+              (click)="selectCategory(category)"
+              class="category-btn">
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="projects-grid">
+      <article *ngFor="let project of filteredProjects; let i = index"
+               class="project-card glass-card"
+               [style.animation-delay]="(i * 0.05) + 's'">
+        
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title" />
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3>{{ project.title }}</h3>
+              <div class="project-links">
+                <a *ngIf="project.github" [href]="project.github" target="_blank" class="project-link github-link">
+                  <span>GitHub</span>
+                </a>
+                <a *ngIf="project.live" [href]="project.live" target="_blank" class="project-link live-link">
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

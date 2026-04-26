@@ -1,0 +1,23 @@
+<section id="achievements" class="achievements">
+  <h2 class="section-title">Achievements & Awards</h2>
+
+  <div class="achievements-container">
+    <div class="achievements-grid">
+      <div *ngFor="let achievement of achievements; let i = index"
+           class="achievement-card glass-card"
+           [style.animation-delay]="(i * 0.1) + 's'">
+        
+        <div class="achievement-icon">{{ achievement.icon }}</div>
+        
+        <div class="achievement-content">
+          <h3 class="achievement-title">{{ achievement.title }}</h3>
+          <p class="achievement-org">{{ achievement.organization }}</p>
+          <p class="achievement-description">{{ achievement.description }}</p>
+          <span class="achievement-year">{{ achievement.year }}</span>
+        </div>
+
+        <div class="achievement-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>

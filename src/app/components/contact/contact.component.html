@@ -1,0 +1,77 @@
+<section id="contact" class="contact">
+  <h2 class="section-title">Get In Touch</h2>
+
+  <div class="contact-container">
+    <div class="contact-content">
+      <p class="contact-intro">
+        I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out!
+      </p>
+
+      <div class="contact-info-grid">
+        <a *ngFor="let info of contactInfo"
+           [href]="info.link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-info-card glass-card">
+          <span class="contact-icon">{{ info.icon }}</span>
+          <div class="contact-details">
+            <span class="contact-label">{{ info.label }}</span>
+            <span class="contact-value">{{ info.value }}</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrapper">
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+        <h3>Send me a message</h3>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text"
+                 id="name"
+                 name="name"
+                 [(ngModel)]="formData.name"
+                 placeholder="Your name"
+                 required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email"
+                 id="email"
+                 name="email"
+                 [(ngModel)]="formData.email"
+                 placeholder="your.email@example.com"
+                 required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message"
+                    name="message"
+                    [(ngModel)]="formData.message"
+                    placeholder="Your message here..."
+                    rows="5"
+                    required></textarea>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary submit-btn"
+                [disabled]="isSubmitting()">
+          <span *ngIf="!isSubmitting()">Send Message</span>
+          <span *ngIf="isSubmitting()">Sending...</span>
+        </button>
+
+        <div *ngIf="submitSuccess()" class="success-message">
+          ✓ Message sent successfully! I'll get back to you soon.
+        </div>
+
+        <div *ngIf="submitError()" class="error-message">
+          ✗ {{ submitError() }}
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

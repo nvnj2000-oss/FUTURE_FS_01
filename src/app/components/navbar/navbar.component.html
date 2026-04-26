@@ -1,0 +1,27 @@
+<header [class.scrolled]="scrolled()">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <span class="logo">NJ</span>
+      <span class="brand-text">Naveen J</span>
+    </div>
+
+    <nav class="navbar-nav" [class.active]="isMenuOpen()">
+      <a *ngFor="let item of navItems"
+         (click)="navigateTo(item.id)"
+         class="nav-link">
+        {{ item.label }}
+      </a>
+    </nav>
+
+    <div class="navbar-actions">
+      <button class="btn btn-primary download-btn" (click)="downloadResume()">
+        Download Resume
+      </button>
+      <button class="hamburger" [class.active]="isMenuOpen()" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,52 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-branding">
+        <h3>Naveen J</h3>
+        <p>Full Stack Developer | BCA Student | Tech Enthusiast</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-link-group">
+          <h4>Navigation</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-link-group">
+          <h4>Social</h4>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:nvnj2000@gmail.com">Email</a>
+          <a href="https://dulcet-cassata-d76c62.netlify.app" target="_blank" rel="noopener noreferrer">Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-socials">
+      <span class="social-label">Connect With Me:</span>
+      <div class="social-icons">
+        <a *ngFor="let social of socialLinks"
+           [href]="social.url"
+           [title]="social.title"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-icon">
+          {{ social.icon }}
+        </a>
+      </div>
+    </div>
+
+    <button class="scroll-to-top" (click)="scrollToTop()" title="Back to top">
+      ↑
+    </button>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} Naveen J. All rights reserved. | Designed with ❤️ and built with Angular</p>
+  </div>
+</footer>

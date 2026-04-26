@@ -1,0 +1,38 @@
+<section id="experience" class="experience">
+  <h2 class="section-title">Work Experience</h2>
+
+  <div class="experience-container">
+    <div class="timeline">
+      <div *ngFor="let exp of experiences; let i = index" 
+           class="timeline-item"
+           [class.current]="exp.isCurrent"
+           [style.animation-delay]="(i * 0.1) + 's'">
+        
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line" *ngIf="i < experiences.length - 1"></div>
+        </div>
+
+        <div class="timeline-content glass-card">
+          <div class="exp-header">
+            <div class="exp-title-group">
+              <h3 class="exp-title">{{ exp.title }}</h3>
+              <p class="exp-company">{{ exp.company }}</p>
+            </div>
+            <span class="exp-badge" *ngIf="exp.isCurrent">Current</span>
+          </div>
+
+          <p class="exp-period">{{ exp.period }}</p>
+          <p class="exp-description">{{ exp.description }}</p>
+
+          <div class="exp-responsibilities">
+            <h4>Responsibilities:</h4>
+            <ul>
+              <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

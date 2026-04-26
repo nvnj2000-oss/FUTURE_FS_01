@@ -1,0 +1,76 @@
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-name">Naveen J</h1>
+      <div class="hero-title">
+        <span class="text-gradient">{{ displayText() }}<span class="cursor" [class.blinking]="isTyping()">|</span></span>
+      </div>
+      <p class="hero-description">
+        Motivated BCA student with hands-on experience in web development, frontend frameworks, databases, and Python-based projects. Passionate about building scalable, user-centric solutions.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn btn-primary" (click)="scrollToProjects()">
+          <span class="icon">→</span>View Projects
+        </button>
+        <button class="btn btn-secondary" (click)="downloadResume()">
+          <span class="icon">⬇</span>Download Resume
+        </button>
+        <button class="btn btn-secondary" (click)="contactMe()">
+          <span class="icon">✉</span>Contact Me
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">8+</span>
+          <span class="stat-label">Skills</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Internship</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar-container">
+        <div class="avatar-glow"></div>
+        <div class="avatar">
+          <div class="avatar-content">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Head -->
+              <circle cx="100" cy="70" r="35" fill="#00d4ff" opacity="0.8"/>
+              <!-- Body -->
+              <ellipse cx="100" cy="130" rx="30" ry="40" fill="#6c5ce7" opacity="0.7"/>
+              <!-- Arms -->
+              <rect x="50" y="115" width="50" height="15" rx="7" fill="#00d4ff" opacity="0.6"/>
+              <rect x="100" y="115" width="50" height="15" rx="7" fill="#00d4ff" opacity="0.6"/>
+              <!-- Code symbol -->
+              <text x="100" y="140" text-anchor="middle" font-size="40" fill="white" font-family="monospace" opacity="0.8">&lt; &gt;</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="floating-elements">
+        <div class="float-item float-1">HTML5</div>
+        <div class="float-item float-2">CSS3</div>
+        <div class="float-item float-3">JavaScript</div>
+        <div class="float-item float-4">Angular</div>
+        <div class="float-item float-5">Python</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll to explore</span>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+</section>
